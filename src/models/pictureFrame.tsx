@@ -15,7 +15,7 @@ import {
   Euler,
 } from "three";
 
-type PictureFrameProps = Omit<ThreeElements["group"], "position" | "rotation"> & {
+type PictureFrameProps = Omit<ThreeElements["group"], "position" | "rotation" | "id"> & {
   image: string;
   imageScale?: number | [number, number];
   imageOffset?: [number, number, number];
