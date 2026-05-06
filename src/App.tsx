@@ -77,13 +77,14 @@ const BACKGROUND_FADE_START = Math.max(
 );
 
 const TYPED_LINES = [
-  "> tina",
+  "> idriss,",
   "...",
   "> today is your birthday",
   "...",
-  "> so i made you this computer program",
+  "> wa7d l gift tal3 b 0 DH , ",
+
   "...",
-  "٩(◕‿◕)۶ ٩(◕‿◕)۶ ٩(◕‿◕)۶"
+
 ];
 const TYPED_CHAR_DELAY = 100;
 const POST_TYPING_SCENE_DELAY = 1000;
@@ -101,7 +102,7 @@ const BIRTHDAY_CARDS: ReadonlyArray<BirthdayCardConfig> = [
     id: "confetti",
     image: "/card.png",
     position: [1, 0.081, -2],
-    rotation: [-Math.PI / 2 , 0, Math.PI / 3],
+    rotation: [-Math.PI / 2, 0, Math.PI / 3],
   }
 ];
 
@@ -266,25 +267,37 @@ function AnimatedScene({
       <group ref={tableGroup}>
         <Table />
         <PictureFrame
-          image="/frame2.jpg"
+          id="frame2"
+          isActive={activeCardId === "frame2"}
+          onToggle={onToggleCard}
+          image="/pic2.jpeg"
           position={[0, 0.735, 3]}
           rotation={[0, 5.6, 0]}
           scale={0.75}
         />
         <PictureFrame
-          image="/frame3.jpg"
+          id="frame3"
+          isActive={activeCardId === "frame3"}
+          onToggle={onToggleCard}
+          image="/pic3.jpeg"
           position={[0, 0.735, -3]}
           rotation={[0, 4.0, 0]}
           scale={0.75}
         />
         <PictureFrame
-          image="/frame4.jpg"
+          id="frame4"
+          isActive={activeCardId === "frame4"}
+          onToggle={onToggleCard}
+          image="/pic4.jpeg"
           position={[-1.5, 0.735, 2.5]}
           rotation={[0, 5.4, 0]}
           scale={0.75}
         />
         <PictureFrame
-          image="/frame1.jpg"
+          id="frame1"
+          isActive={activeCardId === "frame1"}
+          onToggle={onToggleCard}
+          image="/pic1.jpeg"
           position={[-1.5, 0.735, -2.5]}
           rotation={[0, 4.2, 0]}
           scale={0.75}
@@ -560,7 +573,7 @@ export default function App() {
             onToggleCard={handleCardToggle}
           />
           <ambientLight intensity={(1 - environmentProgress) * 0.8} />
-          <directionalLight intensity={0.5} position={[2, 10, 0]} color={[1, 0.9, 0.95]}/>
+          <directionalLight intensity={0.5} position={[2, 10, 0]} color={[1, 0.9, 0.95]} />
           <Environment
             files={["/shanghai_bund_4k.hdr"]}
             backgroundRotation={[0, 3.3, 0]}
